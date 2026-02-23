@@ -4,32 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Mio Fratello Gemello</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('images/image.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0f0f23, #1e3a8a, #3b82f6, #8b5cf6, #ec4899);
             background-attachment: fixed;
-            color: white; /* Per rendere il testo visibile su sfondo immagine */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Ombreggiatura per leggibilità */
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            color: #ffffff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
         }
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        h2 {
+            font-size: 2em;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(255,255,255,0.4);
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        p {
+            max-width: 600px;
+            margin: 15px auto;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: sparkle 5s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes sparkle {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: float 10s linear infinite;
+        }
+        .particle:nth-child(odd) { animation-duration: 8s; }
+        .particle:nth-child(even) { animation-duration: 12s; }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
     </style>
 </head>
 <body>
+    <div class="particles">
+        <span class="particle" style="left: 10%; width: 2px; height: 2px; animation-delay: 0s;"></span>
+        <span class="particle" style="left: 20%; width: 3px; height: 3px; animation-delay: 1s;"></span>
+        <span class="particle" style="left: 30%; width: 1px; height: 1px; animation-delay: 2s;"></span>
+        <span class="particle" style="left: 40%; width: 2px; height: 2px; animation-delay: 3s;"></span>
+        <span class="particle" style="left: 50%; width: 4px; height: 4px; animation-delay: 4s;"></span>
+        <span class="particle" style="left: 60%; width: 1px; height: 1px; animation-delay: 5s;"></span>
+        <span class="particle" style="left: 70%; width: 3px; height: 3px; animation-delay: 6s;"></span>
+        <span class="particle" style="left: 80%; width: 2px; height: 2px; animation-delay: 7s;"></span>
+        <span class="particle" style="left: 90%; width: 1px; height: 1px; animation-delay: 8s;"></span>
+    </div>
     <h1>A Mio Fratello Gemello</h1>
     <p>Questo sito è per te, mio gemello. Condividi ricordi e momenti che ci legano da sempre.</p>
     <h2>Ricordi</h2>
     <p>Ricordo i giochi da bambini, le risate e i momenti in cui eravamo una squadra. Sei stato il mio primo compagno, e lo sei ancora.</p>
-    <p>Anche se le strade sono diverse, il legame rimane. Sono grato per te.</p>
+    <p>Sono grato per te.</p>
     <h2>Messaggio</h2>
     <p>Sei parte di me. Continua come sei, e ci sarò sempre.</p>
     <p>Tuo fratello</p>
-    <h2>Foto di Noi</h2>
-    <p>Ecco alcune foto che catturano i nostri momenti speciali insieme.</p>
-    <!-- Sostituisci 'foto1.jpg' con il nome del tuo file immagine -->
-    <img src="images/foto1.jpg" alt="Noi da bambini" style="max-width: 300px; height: auto; margin: 10px;">
-    <!-- Aggiungi più immagini come questa -->
-    <img src="images/foto2.jpg" alt="Un ricordo felice" style="max-width: 300px; height: auto; margin: 10px;">
+    <img src="images/image.png" alt="Immagine" style="max-width: 100px; display: block; margin: 10px auto;">
 </body>
 </html>
