@@ -55,6 +55,19 @@
         img:hover {
             transform: scale(1.1);
         }
+        /* larger, prominent header image */
+        .hero-img {
+            max-width: 100%;
+            width: 350px;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+        /* override generic img styles for the hero image */
+        .hero-img:hover {
+            transform: none;
+        }
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -115,7 +128,7 @@
         <span class="particle" style="left: 90%; width: 1px; height: 1px; animation-delay: 8s;"></span>
     </div>
     <h1>A Mio Fratello Gemello</h1>
-    <img src="images/image1.jfif" alt="Fratelli Gemelli" style="max-width: 300px; display: block; margin: 20px auto; border-radius: 10px;">
+    <img class="hero-img" src="images/image1.jfif" alt="Fratelli Gemelli">
     <p>Questo sito è per te, mio gemello. Condividi ricordi e momenti che ci legano da sempre.</p>
     <h2>Ricordi</h2>
     <p>Ricordo i giochi da bambini, le risate e i momenti in cui eravamo una squadra. Sei stato il mio primo compagno, e lo sei ancora.</p>
